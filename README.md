@@ -10,40 +10,40 @@ To use this JAVA Package a complete example is available in EssSample.java
 
 ## Usage
 
- package com.hypecal.ess;
- 
- import java.util.ArrayList;
- import java.util.List;
- 
- import com.hypecal.ess.Ess;
- import com.hypecal.ess.channel.Channel;
- import com.hypecal.ess.channel.feed.Feed;
- import com.hypecal.ess.channel.feed.AccessTypes;
- import com.hypecal.ess.channel.feed.Country;
- import com.hypecal.ess.channel.feed.authors.AuthorItem;
- import com.hypecal.ess.channel.feed.authors.AuthorTypes;
- import com.hypecal.ess.channel.feed.categories.CategoryItem;
- import com.hypecal.ess.channel.feed.categories.CategoryTypes;
- import com.hypecal.ess.channel.feed.dates.DateItem;
- import com.hypecal.ess.channel.feed.dates.DateTypes;
- import com.hypecal.ess.channel.feed.dates.DateUnits;
- import com.hypecal.ess.channel.feed.people.PeopleItem;
- import com.hypecal.ess.channel.feed.people.PeopleTypes;
- import com.hypecal.ess.channel.feed.places.PlaceItem;
- import com.hypecal.ess.channel.feed.places.PlaceTypes;
- import com.hypecal.ess.channel.feed.prices.PriceCurrencies;
- import com.hypecal.ess.channel.feed.prices.PriceItem;
- import com.hypecal.ess.channel.feed.prices.PriceModes;
- import com.hypecal.ess.channel.feed.prices.PriceTypes;
- import com.hypecal.ess.channel.feed.prices.PriceUnits;
- import com.hypecal.ess.channel.feed.medias.MediaItem;
- import com.hypecal.ess.channel.feed.medias.MediaTypes;
- import com.hypecal.ess.channel.feed.relations.RelationItem;
- import com.hypecal.ess.channel.feed.relations.RelationTypes; 
-  
- 
- public final class EssSample 
- {
+	package com.hypecal.ess;
+	 
+	import java.util.ArrayList;
+ 	import java.util.List;
+ 	
+ 	import com.hypecal.ess.Ess;
+ 	import com.hypecal.ess.channel.Channel;
+ 	import com.hypecal.ess.channel.feed.Feed;
+ 	import com.hypecal.ess.channel.feed.AccessTypes;
+ 	import com.hypecal.ess.channel.feed.Country;
+ 	import com.hypecal.ess.channel.feed.authors.AuthorItem;
+ 	import com.hypecal.ess.channel.feed.authors.AuthorTypes;
+ 	import com.hypecal.ess.channel.feed.categories.CategoryItem;
+ 	import com.hypecal.ess.channel.feed.categories.CategoryTypes;
+ 	import com.hypecal.ess.channel.feed.dates.DateItem;
+ 	import com.hypecal.ess.channel.feed.dates.DateTypes;
+ 	import com.hypecal.ess.channel.feed.dates.DateUnits;
+ 	import com.hypecal.ess.channel.feed.people.PeopleItem;
+ 	import com.hypecal.ess.channel.feed.people.PeopleTypes;
+ 	import com.hypecal.ess.channel.feed.places.PlaceItem;
+ 	import com.hypecal.ess.channel.feed.places.PlaceTypes;
+ 	import com.hypecal.ess.channel.feed.prices.PriceCurrencies;
+ 	import com.hypecal.ess.channel.feed.prices.PriceItem;
+ 	import com.hypecal.ess.channel.feed.prices.PriceModes;
+ 	import com.hypecal.ess.channel.feed.prices.PriceTypes;
+ 	import com.hypecal.ess.channel.feed.prices.PriceUnits;
+ 	import com.hypecal.ess.channel.feed.medias.MediaItem;
+ 	import com.hypecal.ess.channel.feed.medias.MediaTypes;
+ 	import com.hypecal.ess.channel.feed.relations.RelationItem;
+ 	import com.hypecal.ess.channel.feed.relations.RelationTypes; 
+ 	 
+ 	
+ 	public final class EssSample 
+ 	{
  	public static void main( String[] args ) 
  	{
 		Ess ess = new Ess();
@@ -359,7 +359,7 @@ To use this JAVA Package a complete example is available in EssSample.java
 		// -- Generate the ESS Feed ----------------------------------------------
 		ess.genarateFeedFile( "/var/local/www/site/feeds/events.ess", true );
 	}
-}
+	}
 
 
 
