@@ -1,51 +1,39 @@
-java-ess
-========
+package com.hypecal.ess;
 
-Generate ESS XML feed with a JAVA Object
-The com.hypecal.com Package allow to generate ESS feed.
+import java.util.ArrayList;
+import java.util.List;
 
-To use this JAVA Package a complete example is available in EssSample.java
+import com.hypecal.ess.Ess;
+import com.hypecal.ess.channel.Channel;
+import com.hypecal.ess.channel.feed.Feed;
+import com.hypecal.ess.channel.feed.AccessTypes;
+import com.hypecal.ess.channel.feed.Country;
+import com.hypecal.ess.channel.feed.authors.AuthorItem;
+import com.hypecal.ess.channel.feed.authors.AuthorTypes;
+import com.hypecal.ess.channel.feed.categories.CategoryItem;
+import com.hypecal.ess.channel.feed.categories.CategoryTypes;
+import com.hypecal.ess.channel.feed.dates.DateItem;
+import com.hypecal.ess.channel.feed.dates.DateTypes;
+import com.hypecal.ess.channel.feed.dates.DateUnits;
+import com.hypecal.ess.channel.feed.people.PeopleItem;
+import com.hypecal.ess.channel.feed.people.PeopleTypes;
+import com.hypecal.ess.channel.feed.places.PlaceItem;
+import com.hypecal.ess.channel.feed.places.PlaceTypes;
+import com.hypecal.ess.channel.feed.prices.PriceCurrencies;
+import com.hypecal.ess.channel.feed.prices.PriceItem;
+import com.hypecal.ess.channel.feed.prices.PriceModes;
+import com.hypecal.ess.channel.feed.prices.PriceTypes;
+import com.hypecal.ess.channel.feed.prices.PriceUnits;
+import com.hypecal.ess.channel.feed.medias.MediaItem;
+import com.hypecal.ess.channel.feed.medias.MediaTypes;
+import com.hypecal.ess.channel.feed.relations.RelationItem;
+import com.hypecal.ess.channel.feed.relations.RelationTypes;
 
 
-
-## Usage
-
- package com.hypecal.ess;
- 
- import java.util.ArrayList;
- import java.util.List;
- 
- import com.hypecal.ess.Ess;
- import com.hypecal.ess.channel.Channel;
- import com.hypecal.ess.channel.feed.Feed;
- import com.hypecal.ess.channel.feed.AccessTypes;
- import com.hypecal.ess.channel.feed.Country;
- import com.hypecal.ess.channel.feed.authors.AuthorItem;
- import com.hypecal.ess.channel.feed.authors.AuthorTypes;
- import com.hypecal.ess.channel.feed.categories.CategoryItem;
- import com.hypecal.ess.channel.feed.categories.CategoryTypes;
- import com.hypecal.ess.channel.feed.dates.DateItem;
- import com.hypecal.ess.channel.feed.dates.DateTypes;
- import com.hypecal.ess.channel.feed.dates.DateUnits;
- import com.hypecal.ess.channel.feed.people.PeopleItem;
- import com.hypecal.ess.channel.feed.people.PeopleTypes;
- import com.hypecal.ess.channel.feed.places.PlaceItem;
- import com.hypecal.ess.channel.feed.places.PlaceTypes;
- import com.hypecal.ess.channel.feed.prices.PriceCurrencies;
- import com.hypecal.ess.channel.feed.prices.PriceItem;
- import com.hypecal.ess.channel.feed.prices.PriceModes;
- import com.hypecal.ess.channel.feed.prices.PriceTypes;
- import com.hypecal.ess.channel.feed.prices.PriceUnits;
- import com.hypecal.ess.channel.feed.medias.MediaItem;
- import com.hypecal.ess.channel.feed.medias.MediaTypes;
- import com.hypecal.ess.channel.feed.relations.RelationItem;
- import com.hypecal.ess.channel.feed.relations.RelationTypes; 
-  
- 
- public final class EssSample 
- {
- 	public static void main( String[] args ) 
- 	{
+public final class EssSample 
+{
+	public static void main( String[] args ) 
+	{
 		Ess ess = new Ess();
 		ess.setLang( "en" );
 		ess.setVersion( "0.9" );
@@ -359,37 +347,5 @@ To use this JAVA Package a complete example is available in EssSample.java
 		// -- Generate the ESS Feed ----------------------------------------------
 		ess.genarateFeedFile( "/var/local/www/site/feeds/events.ess", true );
 	}
+
 }
-
-
-
-
-# Contributing
-
-Contributions to the project are welcome. Feel free to fork and improve. I accept pull requests and issues,
-especially when tests are included.
-
-# License
-
-(The MIT License)
-
-Copyright (c) 2013
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
