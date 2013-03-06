@@ -26,6 +26,8 @@ import com.hypecal.ess.channel.Channel;
  * @access		public
  * @author      Brice Pissard
  * @link        http://eventstandardsyndication.org
+ * @see			http://www.mkyong.com/java/jaxb-hello-world-example
+ * @see			http://jaxb.java.net
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(required=true, name="ess")
@@ -36,11 +38,40 @@ public final class Ess
 	//	You can add any ESS aggregators where you want your event to be published or/and updated.
 	//
 	public String[] eventAggregators = {
-		'http://api.hypecal.com/v1/ess/aggregator.json?feed=',
-		'http://...' 					
-	}
+		"http://api.hypecal.com/v1/ess/aggregator.json?feed=",
+		"http://..."
+	};
 	
 	// --- [ END ] ----------------------------------------------------------------------------------------------- 
+	
+	
+	/**
+	 * ESS <ess> Default Name-Space attribute
+	 */
+	@XmlAttribute(required = true, name = "xmlns")
+	protected String xmlns = "http://eventstandardsyndication.org/history/";
+	
+	/**
+	 * ESS <ess> Default 'version' attribute
+	 */
+	@XmlAttribute(required = true, name = "version")
+	protected String version = "0.9";
+	
+	/**
+	 * ESS <ess> Default Language attribute
+	 * 
+	 * @see 
+	 */
+	@XmlAttribute(required = true, name = "lang")
+	protected String lang = "en";
+	
+	
+	
+	/**
+	 * ESS <ess> XML child element.
+	 */
+	@XmlElement(required = true, name = "channel")
+	protected Channel channel;
 	
 	
 	
@@ -49,7 +80,7 @@ public final class Ess
 		this.setXmlns( this.xmlns + this.version );
 		this.setVersion( this.version );
 		this.setLang( this.lang );
-		this.setGenerator( 'ess:java:generator:version:' + this.version );
+		this.setGenerator( "ess:java:generator:version:" + this.version );
 	}
 	
 	/**
@@ -90,32 +121,28 @@ public final class Ess
 	
 	
 	
-	// --- Channel's Attributes ---
 	
-	@XmlAttribute(required = true, name = "xmlns")
-	protected String xmlns = 'http://eventstandardsyndication.org/history/';
+	// --- Ess Attributes ---
+	
 	private void setXmlns( String o ) 		{ this.xmlns = o; }
 	public int getXmlns() 					{ return xmlns; }
 	
-	@XmlAttribute(required = true, name = "version")
-	protected String version = '0.9'; 	// ESS Default Feed's version 
+	
 	public void setVersion( String o ) 		{ this.version = o; }
 	public String getVersion() 				{ return version; }
 	
-	@XmlAttribute(required = true, name = "lang")
-	protected String lang = 'en';		// ESS Default Feed's language
+	
 	public void setLang( String o ) 		{ this.lang = o; }
 	public String getLang()					{ return lang; }
 	
 	
 	
 	
-	// --- Channel's Elements ---
+	// --- Ess Element ---
 	
-	@XmlElement(required = true, name = "channel")
-	protected Channel channel;
 	public void setChannel( Channel o )		{ this.channel = o; }
 	public Channel getChannel() 			{ return channel; }
+	
 	
 	
 	
@@ -134,10 +161,10 @@ public final class Ess
 	{
 		String chars = md5( key );
 		
-		String  uuid  = substr( chars, 0,8   ) + '-';
-				uuid += substr( chars, 8,4   ) + '-';
-				uuid += substr( chars, 12,4  ) + '-';
-				uuid += substr( chars, 16,4  ) + '-';
+		String  uuid  = substr( chars, 0,8   ) + "-";
+				uuid += substr( chars, 8,4   ) + "-";
+				uuid += substr( chars, 12,4  ) + "-";
+				uuid += substr( chars, 16,4  ) + "-";
 				uuid += substr( chars, 20,12 );
 
 		return prefix + uuid;
@@ -151,7 +178,7 @@ public final class Ess
 	 */ 
   	public static Date getISODate( String date )
   	{
-  		SimpleDateFormat formatDate = new SimpleDateFormat( "yyyy-MM-dd HH:ii" );
+  		SimpleDateFormat formatDate = new SimpleDateFormat( "yyyy-MM-ddTHH:mm:ss" );
   		
   		return formatDate.parse( date );
   	}

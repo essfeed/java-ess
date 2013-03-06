@@ -24,8 +24,8 @@ import com.hypecal.ess.channel.feed.prices.PriceItem;
 import com.hypecal.ess.channel.feed.prices.PriceModes;
 import com.hypecal.ess.channel.feed.prices.PriceTypes;
 import com.hypecal.ess.channel.feed.prices.PriceUnits;
-import com.hypecal.ess.channel.feed.medias.MediaItem;
-import com.hypecal.ess.channel.feed.medias.MediaTypes;
+import com.hypecal.ess.channel.feed.media.MediaItem;
+import com.hypecal.ess.channel.feed.media.MediaTypes;
 import com.hypecal.ess.channel.feed.relations.RelationItem;
 import com.hypecal.ess.channel.feed.relations.RelationTypes;
 
@@ -58,7 +58,7 @@ public final class EssSample
 			PriceItem 			price	 		= new PriceItem();
 			List<PriceItem> 	pricesList		= new ArrayList<PriceItem>();
 			MediaItem 			media	 		= new MediaItem();
-			List<MediaItem> 	mediasList		= new ArrayList<MediaItem>();
+			List<MediaItem> 	mediaList		= new ArrayList<MediaItem>();
 			PeopleItem 			people	 		= new PeopleItem();
 			List<PeopleItem> 	peopleList		= new ArrayList<PeopleItem>();
 			AuthorItem 			author	 		= new AuthorItem();
@@ -96,7 +96,7 @@ public final class EssSample
 					date.setDuration(	7200 ); // 2 hours = 7200 seconds
 					datesList.add( date ); // add date 01
 					date = new DateItem();
-					date.setType( 		DateTypes.RECURENT );
+					date.setType( 		DateTypes.RECURRENT );
 					date.setUnit( 		DateUnits.WEEK );
 					date.setName(		"Match Date" );
 					date.getStart(		Ess.getISODate( "2013-10-25 15:30" ) );
@@ -136,8 +136,8 @@ public final class EssSample
 					price.setUri(			"http://payment.com/api?mode=entrance&price=10" );
 					pricesList.add( price ); // add price 02
 					price = new PriceItem();
-					price.setType( 			PriceTypes.RECURENT );
-					price.setMode( 			PriceModes.FIX );
+					price.setType( 			PriceTypes.RECURRENT );
+					price.setMode( 			PriceModes.FIXED );
 					price.setUnit(   		PriceUnits.MONTH );
 					price.setPriority(		3 );
 					price.setName(			"Monthly subscription" );
@@ -148,31 +148,31 @@ public final class EssSample
 					pricesList.add( price ); // add price 03
 				feed.setPrices( pricesList );
 				
-					// -- Medias -----------------------------------------------
+					// -- Media -----------------------------------------------
 					media.setType( 			MediaTypes.IMAGE );
 					media.setName(			"The image" );
 					media.setUri(			"http://example.com/image.png" );
 					media.setPriority(		1 );
-					mediasList.add( media ); // add media 01
+					mediaList.add( media ); // add media 01
 					media = new MediaItem();
 					media.setType( 			MediaTypes.SOUND );
 					media.setName(			"The sound" );
 					media.setUri(			"http://example.com/sound.mp3" );
 					media.setPriority(		2 );
-					mediasList.add( media ); // add media 02
+					mediaList.add( media ); // add media 02
 					media = new MediaItem();
 					media.setType( 			MediaTypes.VIDEO );
 					media.setName(			"The video" );
 					media.setUri(			"http://example.com/video.mp4" );
 					media.setPriority(		3 );
-					mediasList.add( media ); // add media 03
+					mediaList.add( media ); // add media 03
 					media = new MediaItem();
 					media.setType( 			MediaTypes.WEBSITE );
 					media.setName(			"The website" );
 					media.setUri(			"http://example.com/" );
 					media.setPriority(		4 );
-					mediasList.add( media ); // add media 04
-				feed.setMedias( mediasList );
+					mediaList.add( media ); // add media 04
+				feed.setMedia( mediaList );
 				
 					// -- People -----------------------------------------------
 					people.setType(			PeopleTypes.ORGANIZER );
@@ -200,12 +200,12 @@ public final class EssSample
 					people.setLastname(		"Ronaldo" );
 					peopleList.add( people ); // add performer to people list
 					people = new PeopleItem();
-					people.setType(			PeopleTypes.VISITOR );
+					people.setType(			PeopleTypes.ATTENDEE );
 					people.setName(			"All kind of public are welcome." );
 					people.setMinpeople(	0 );
 					people.setMaxpeople(	20000 );
 					people.setMinage(		18 );
-					peopleList.add( people ); // add visitor to people list
+					peopleList.add( people ); // add attendee to people list
 				feed.setPeople( peopleList );
 					
 					// -- Authors -----------------------------------------------
@@ -282,7 +282,7 @@ public final class EssSample
 					// -- Dates -----------------------------------------------
 					datesList = new ArrayList<DateItem>();
 					date = new DateItem();
-					date.setType( 		DateTypes.RECURENT );
+					date.setType( 		DateTypes.RECURRENT );
 					date.setUnit( 		DateUnits.YEAR );
 					date.setName(		"Yearly concert" );
 					date.getStart(		Ess.getISODate( "2013-10-25 15:30" ) );
@@ -292,7 +292,7 @@ public final class EssSample
 					// -- Places ----------------------------------------------
 					placesList = new ArrayList<PlaceItem>();
 					place = new PlaceItem();
-					place.setType( 			PlaceTypes.FIX );
+					place.setType( 			PlaceTypes.FIXED );
 					place.setCountry(   	Country.getByCode( "US" ).getName() );
 					place.setCountry_code(	Country.getByCode( "US" ).getAlpha2() );
 					place.setName(			"NY Stadium" );
@@ -323,14 +323,14 @@ public final class EssSample
 					people.setName(			"Madonna" );
 					peopleList.add( people );
 				feed.setPlaces( peopleList );
-					// -- Medias -----------------------------------------------
-					mediasList = new ArrayList<MediaItem>();
+					// -- Media -----------------------------------------------
+					mediaList = new ArrayList<MediaItem>();
 					media = new MediaItem();
 					media.setType( 			MediaTypes.IMAGE );
 					media.setName(			"Foto of Madonna" );
 					media.setUri(			"http://madonna.com/image.png" );
-					mediasList.add( media );
-				feed.setMedias( mediasList );
+					mediaList.add( media );
+				feed.setMedia( mediaList );
 				// --------------------------------------------------------------
 				// -- [ end of Event 02 ] ---------------------------------------
 				// --------------------------------------------------------------

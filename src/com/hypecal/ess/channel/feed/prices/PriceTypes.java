@@ -7,6 +7,6 @@ public enum PriceTypes
 	@XmlEnumValue(value = "standalone")
 	STANDALONE,
 	
-	@XmlEnumValue(value = "recurent")
-	RECURENT
+	@XmlEnumValue(value = "recurrent")
+	RECURRENT
 }

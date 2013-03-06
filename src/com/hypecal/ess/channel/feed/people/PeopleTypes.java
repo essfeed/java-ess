@@ -10,6 +10,6 @@ public enum PeopleTypes
 	@XmlEnumValue(value = "performer")
 	PERFORMER,
 	
-	@XmlEnumValue(value = "visitor")
-	VISITOR
+	@XmlEnumValue(value = "attendee")
+	ATTENDEE
 }

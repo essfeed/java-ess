@@ -1,4 +1,4 @@
-package com.hypecal.ess.channel.feed.medias;
+package com.hypecal.ess.channel.feed.media;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.hypecal.ess.channel.feed.medias.MediaTypes;
+import com.hypecal.ess.channel.feed.media.MediaTypes;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)

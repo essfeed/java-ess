@@ -1,4 +1,4 @@
-package com.hypecal.ess.channel.feed.medias;
+package com.hypecal.ess.channel.feed.media;
 
 import javax.xml.bind.annotation.XmlEnumValue;
 

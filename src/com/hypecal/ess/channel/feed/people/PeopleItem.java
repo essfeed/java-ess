@@ -30,7 +30,8 @@ import com.hypecal.ess.channel.feed.people.PeopleTypes;
 	"phone",
 	"minpeople",
 	"maxpeople",
-	"minage" 		
+	"minage",
+	"restriction"
 })
 public class PeopleItem 
 {
@@ -146,4 +147,9 @@ public class PeopleItem
     protected String minage;
 	public void setMinage( String o )		{ this.minage = o; }
 	public String getMinage() 				{ return this.minage; }
+	
+	@XmlElement(required = false, name="restriction")
+    protected String restriction;
+	public void setRestriction( String o )	{ this.restriction = o; }
+	public String getRestriction() 			{ return this.restriction; }
 }

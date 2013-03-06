@@ -13,7 +13,7 @@ import com.hypecal.ess.channel.feed.AccessTypes;
 import com.hypecal.ess.channel.feed.categories.CategoryItem;
 import com.hypecal.ess.channel.feed.authors.AuthorItem;
 import com.hypecal.ess.channel.feed.dates.DateItem;
-import com.hypecal.ess.channel.feed.medias.MediaItem;
+import com.hypecal.ess.channel.feed.media.MediaItem;
 import com.hypecal.ess.channel.feed.people.PeopleItem;
 import com.hypecal.ess.channel.feed.places.PlaceItem;
 import com.hypecal.ess.channel.feed.prices.PriceItem;
@@ -35,7 +35,7 @@ import com.hypecal.ess.channel.feed.relations.RelationItem;
     "dates",
     "places",
     "prices",
-    "medias",
+    "media",
     "people",
     "authors",
     "retations"
@@ -106,11 +106,11 @@ public final class Feed
 	public void setPrices( List<PriceItem> o )			{ this.prices = o; }
 	public List<PriceItem> getPrices() 					{ return this.prices; }
 	
-	@XmlElementWrapper(	required = false, name = "medias")
+	@XmlElementWrapper(	required = false, name = "media")
 	@XmlElement(		required = true, name = "item")
-	protected Medias medias;
-	public void setMedias( List<MediaItem> o )			{ this.medias = o; }
-	public List<MediaItem> getMedias() 					{ return this.medias; }
+	protected Media media;
+	public void setMedia( List<MediaItem> o )			{ this.media = o; }
+	public List<MediaItem> getMedia() 					{ return this.media; }
 	
 	@XmlElementWrapper(	required = false, name = "people")
 	@XmlElement(		required = true, name = "item")

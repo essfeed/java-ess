@@ -7,6 +7,9 @@ public enum DateTypes
 	@XmlEnumValue(value = "standalone")
 	STANDALONE,
 	
-	@XmlEnumValue(value = "recurent")
-	RECURENT
+	@XmlEnumValue(value = "recurrent")
+	RECURRENT,
+	
+	@XmlEnumValue(value = "permanent")
+	PERMANENT
 }
