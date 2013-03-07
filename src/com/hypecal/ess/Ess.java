@@ -1,6 +1,7 @@
 package com.hypecal.ess;
 
 import java.util.Date;
+import java.util.UUID;
 import java.text.SimpleDateFormat;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -159,15 +160,8 @@ public final class Ess
   	 */
   	public static String uuid( String key, String prefix ) 
 	{
-		String chars = md5( key );
-		
-		String  uuid  = substr( chars, 0,8   ) + "-";
-				uuid += substr( chars, 8,4   ) + "-";
-				uuid += substr( chars, 12,4  ) + "-";
-				uuid += substr( chars, 16,4  ) + "-";
-				uuid += substr( chars, 20,12 );
-
-		return prefix + uuid;
+  		// TODO: convert key submited into UUID;
+		return prefix + UUID.randomUUID().toString();
  	}
   	
   	/**
