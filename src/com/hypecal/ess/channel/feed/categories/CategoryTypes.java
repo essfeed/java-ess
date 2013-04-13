@@ -22,11 +22,17 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "diner")
 	DINER,
 	
+	@XmlEnumValue(value = "cocktail")
+	COCKTAIL,
+	
 	@XmlEnumValue(value = "exhibition")
 	EXHIBITION,
 	
 	@XmlEnumValue(value = "family")
 	FAMILY,
+	
+	@XmlEnumValue(value = "friends")
+	FRIENDS,
 	
 	@XmlEnumValue(value = "festival")
 	FESTIVAL,
