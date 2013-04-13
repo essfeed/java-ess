@@ -8,8 +8,6 @@ import com.hypecal.ess.channel.Channel;
 import com.hypecal.ess.channel.feed.Feed;
 import com.hypecal.ess.channel.feed.AccessTypes;
 import com.hypecal.ess.channel.feed.Country;
-import com.hypecal.ess.channel.feed.authors.AuthorItem;
-import com.hypecal.ess.channel.feed.authors.AuthorTypes;
 import com.hypecal.ess.channel.feed.categories.CategoryItem;
 import com.hypecal.ess.channel.feed.categories.CategoryTypes;
 import com.hypecal.ess.channel.feed.dates.DateItem;
@@ -61,8 +59,6 @@ public final class EssSample
 			List<MediaItem> 	mediaList		= new ArrayList<MediaItem>();
 			PeopleItem 			people	 		= new PeopleItem();
 			List<PeopleItem> 	peopleList		= new ArrayList<PeopleItem>();
-			AuthorItem 			author	 		= new AuthorItem();
-			List<AuthorItem> 	authorsList		= new ArrayList<AuthorItem>();
 			RelationItem 		relation 		= new RelationItem();
 			List<RelationItem> 	relationsList	= new ArrayList<RelationItem>();
 			
@@ -193,12 +189,14 @@ public final class EssSample
 					people.setEmail(		"contact@example.com" );
 					people.setPhone(		"+001 (646) 225-9987" );
 					peopleList.add( people ); // add organizer to people list
+					
 					people = new PeopleItem();
 					people.setType(			PeopleTypes.PERFORMER );
 					people.setName(			"The main player" );
 					people.setFirstname(	"Cristiano" );
 					people.setLastname(		"Ronaldo" );
 					peopleList.add( people ); // add performer to people list
+					
 					people = new PeopleItem();
 					people.setType(			PeopleTypes.ATTENDEE );
 					people.setName(			"All kind of public are welcome." );
@@ -206,26 +204,25 @@ public final class EssSample
 					people.setMaxpeople(	20000 );
 					people.setMinage(		18 );
 					peopleList.add( people ); // add attendee to people list
+				
+					people = new PeopleItem();
+					people.setType(			PeopleTypes.AUTHOR );
+					people.setName(			"John Doe" );
+					people.setEmail( 		"jdoe@example.com" );
+					people.setUri( 			"http://event-provider.com" ); // must be unique, it define the AUTHORID across all event's authors
+					people.setPhone( 		"+001 (646) 490-8899" );
+					people.setFirstname( 	"Janette" );
+					people.setLastname( 	"Doe" );
+					people.setOrganization( "Football club association" );
+					people.setAddress( 		"80, 5th avenue / 45st E - #504" );
+					people.setCity( 		"New York" );
+					people.setZip(			"10001" );
+					people.setState( 		"New York" );
+					people.setState_code( 	"NY" );
+					people.setCountry( 		Country.getByCode( "US" ).getName() );
+					people.setCountry_code( Country.getByCode( "US" ).getAlpha2() );
+					peopleList.add( people );
 				feed.setPeople( peopleList );
-					
-					// -- Authors -----------------------------------------------
-					author.setType( 		AuthorTypes.AUTHOR );
-					author.setName(			"John Doe" );
-					author.setEmail( 		"jdoe@example.com" );
-					author.setUri( 			"http://event-provider.com" ); // must be unique, it define the AUTHORID across all event's authors
-					author.setPhone( 		"+001 (646) 490-8899" );
-					author.setFirstname( 	"Janette" );
-					author.setLastname( 	"Doe" );
-					author.setOrganization( "Football club association" );
-					author.setAddress( 		"80, 5th avenue / 45st E - #504" );
-					author.setCity( 		"New York" );
-					author.setZip(			"10001" );
-					author.setState( 		"New York" );
-					author.setState_code( 	"NY" );
-					author.setCountry( 		Country.getByCode( "US" ).getName() );
-					author.setCountry_code( Country.getByCode( "US" ).getAlpha2() );
-					authorsList.add( author );
-				feed.setAuthors( authorsList );
 				
 					// -- Relations ---------------------------------------------
 					relation.setType( 		RelationTypes.ALTERNATIVE );

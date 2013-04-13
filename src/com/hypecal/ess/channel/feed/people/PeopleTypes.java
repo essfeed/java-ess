@@ -12,4 +12,10 @@ public enum PeopleTypes
 	
 	@XmlEnumValue(value = "attendee")
 	ATTENDEE
+	
+	@XmlEnumValue(value = "author")
+	AUTHOR
+	
+	@XmlEnumValue(value = "contributor")
+	CONTRIBUTOR
 }

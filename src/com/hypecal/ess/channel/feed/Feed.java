@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlType;
 
 import com.hypecal.ess.channel.feed.AccessTypes;
 import com.hypecal.ess.channel.feed.categories.CategoryItem;
-import com.hypecal.ess.channel.feed.authors.AuthorItem;
 import com.hypecal.ess.channel.feed.dates.DateItem;
 import com.hypecal.ess.channel.feed.media.MediaItem;
 import com.hypecal.ess.channel.feed.people.PeopleItem;
@@ -37,7 +36,6 @@ import com.hypecal.ess.channel.feed.relations.RelationItem;
     "prices",
     "media",
     "people",
-    "authors",
     "retations"
 })
 public final class Feed 
@@ -117,12 +115,6 @@ public final class Feed
 	protected People people;
 	public void setPeople( List<PeopleItem> o )			{ this.people = o; }
 	public List<PeopleItem> getPeople() 				{ return this.people; }
-	
-	@XmlElementWrapper(	required = false, name = "authors")
-	@XmlElement(		required = true, name = "item")
-	protected Authors authors;
-	public void setAuthors( List<AuthorItem> o )		{ this.authors = o; }
-	public List<AuthorItem> getAuthors() 				{ return this.authors; }
 	
 	@XmlElementWrapper(	required = false, name = "relations")
 	@XmlElement(		required = true, name = "item")

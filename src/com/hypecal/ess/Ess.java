@@ -26,7 +26,7 @@ import com.hypecal.ess.channel.Channel;
  * @package     ESSFeedWriter
  * @access		public
  * @author      Brice Pissard
- * @link        http://eventstandardsyndication.org
+ * @link        http://essfeed.org
  * @see			http://www.mkyong.com/java/jaxb-hello-world-example
  * @see			http://jaxb.java.net
  */
