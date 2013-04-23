@@ -22,6 +22,9 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "diner")
 	DINER,
 	
+	@XmlEnumValue(value = "entertainment")
+	ENTERTAINMENT,
+	
 	@XmlEnumValue(value = "cocktail")
 	COCKTAIL,
 	
