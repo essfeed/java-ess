@@ -21,9 +21,7 @@ import com.hypecal.ess.channel.feed.places.PlaceMediumTypes;
 	"city", 			
 	"zip", 			
 	"state", 		
-	"state_code",	
-	"begining", 		
-	"ending", 			
+	"state_code",		
 	"medium", 		
 	"kml"
 })
@@ -91,16 +89,6 @@ public class PlaceItem
     protected String state_code;
 	public void setState_code( String o )	{ this.state_code = o; }
 	public String getState_code() 			{ return this.state_code; }
-	
-	@XmlElement(required = false, name="begining")
-    protected PlaceItem begining;
-	public void setBegining( PlaceItem o )	{ this.begining = o; }
-	public PlaceItem getBegining() 			{ return this.begining; }
-	
-	@XmlElement(required = false, name="ending")
-    protected PlaceItem ending;
-	public void setEnding( PlaceItem o )	{ this.ending = o; }
-	public PlaceItem getEnding() 			{ return this.ending; }
 	
 	@XmlElement(required = false, name="medium_name")
     protected String medium_name;

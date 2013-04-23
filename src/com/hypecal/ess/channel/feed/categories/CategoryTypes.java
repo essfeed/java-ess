@@ -25,6 +25,9 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "cocktail")
 	COCKTAIL,
 	
+	@XmlEnumValue(value = "course")
+	COURSE,
+	
 	@XmlEnumValue(value = "exhibition")
 	EXHIBITION,
 	
