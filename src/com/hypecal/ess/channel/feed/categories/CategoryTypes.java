@@ -43,6 +43,9 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "festival")
 	FESTIVAL,
 	
+	@XmlEnumValue(value = "lecture")
+	LECTURE,
+	
 	@XmlEnumValue(value = "meeting")
 	MEETING,
 	
@@ -55,6 +58,9 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "seminar")
 	SEMINAR,
 	
-	@XmlEnumValue(value = "theme")
-	THEME
+	@XmlEnumValue(value = "trade show")
+	TRADE_SHOW,
+	
+	@XmlEnumValue(value = "general")
+	GENERAL
 }
