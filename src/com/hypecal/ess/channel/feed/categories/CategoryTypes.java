@@ -7,6 +7,12 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "award")
 	AWARD,
 	
+	@XmlEnumValue(value = "carnival")
+	CARNAVAL,
+	
+	@XmlEnumValue(value = "cocktail")
+	COCKTAIL,
+	
 	@XmlEnumValue(value = "competition")
 	COMPETITION, 
 	
@@ -16,21 +22,21 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "conference")
 	CONFERENCE, 
 	
+	@XmlEnumValue(value = "congress")
+	CONGRESS, 
+	
 	@XmlEnumValue(value = "concert")
 	CONCERT,
+	
+	@XmlEnumValue(value = "course")
+	COURSE,
 	
 	@XmlEnumValue(value = "diner")
 	DINER,
 	
 	@XmlEnumValue(value = "entertainment")
 	ENTERTAINMENT,
-	
-	@XmlEnumValue(value = "cocktail")
-	COCKTAIL,
-	
-	@XmlEnumValue(value = "course")
-	COURSE,
-	
+		
 	@XmlEnumValue(value = "exhibition")
 	EXHIBITION,
 	
@@ -46,21 +52,42 @@ public enum CategoryTypes
 	@XmlEnumValue(value = "lecture")
 	LECTURE,
 	
+	@XmlEnumValue(value = "market")
+	MARKET,
+	
 	@XmlEnumValue(value = "meeting")
 	MEETING,
 	
 	@XmlEnumValue(value = "networking")
 	NETWORKING,
 	
+	@XmlEnumValue(value = "outdoor")
+	OUTDOOR,
+	
+	@XmlEnumValue(value = "parade")
+	PARADE,
+	
 	@XmlEnumValue(value = "party")
 	PARTY,
 	
+	@XmlEnumValue(value = "peregrination")
+	PEREGRINATION,
+	
 	@XmlEnumValue(value = "seminar")
 	SEMINAR,
+	
+	@XmlEnumValue(value = "spectacle")
+	SPECTACLE,
+	
+	@XmlEnumValue(value = "talk")
+	TALK,
 	
 	@XmlEnumValue(value = "trade show")
 	TRADE_SHOW,
 	
 	@XmlEnumValue(value = "general")
-	GENERAL
+	GENERAL,
+	
+	@XmlEnumValue(value = "visite")
+	VISITE
 }
